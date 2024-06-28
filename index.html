@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Rock Paper Scissors Game</title>
+</head>
+<body>
+
+    <main id="main-container">
+        <h1>Rock Papers Scissors!</h1>
+        <!-- Creating a Rules Section -->
+         <div id="rules-section">
+            <details>
+                <summary id="rules-summary">Rules of the Game</summary>
+                    <p>You will be playing against the computer.</p>
+                    <p>You can choose between Rock, Paper, and Scissors.</p>
+                    <p>The first one to 5 points wins.</p>
+                    <p>Here are the rules to getting a point in the game:</p>
+                    <ul id="rules-list">
+                        <li>Rock beats Scissors</li>
+                        <li>Scissors beats Paper</li>
+                        <li>Paper beats Rock</li>
+                    </ul>
+                    <p>If the player and computer choose the same option (Ex. Paper and Paper), then no one gets the point.</p>
+            </details>
+         </div>
+
+         <!-- Creating a Scores Section -->
+         <div id="scores-section">
+            <p>Player Score: <strong><span>0</span></strong></p>
+            <p>Computer Score: <strong><span>0</span></strong></p>
+         </div>
+
+         <!-- Creating a option-section -->
+          <div id="option-section">
+            <button id="rock-button" class="button">Rock</button>
+            <button id="paper-button" class="button">Paper</button>
+            <button id="scissors-button" class="button">Scissor</button>
+          </div>
+
+          <!-- Creating a Results Section -->
+           <div id="results-section">
+                <p id="winnerMessage"></p>
+                <p id="resultMessage"></p>
+                <button id="play-again" class="button">PlayAgain?</button>
+           </div>
+
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
