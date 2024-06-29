@@ -39,30 +39,35 @@ const scissorBtn = document.getElementById('scissor-button');
 const resultMessage = document.getElementById('resultMessage');
 const winnerMessage = document.getElementById('winnerMessage');
 const resetGameBtn = document.getElementById('play-again');
+const buttons = document.getElementsByClassName('buttons');
+const optionContainer = document.getElementById('option-section');
 
 function showResults(userOption){
     resultMessage.textContent = scoreResult(userOption);
     playerScoreSpan.textContent = playerScore;
     computerScoreSpan.textContent = computerScore;
-    if(playerScore == 5){
-        winnerMessage.textContent = "Player Wins!";
-        resultMessage.style.display = 'none';
-    }else if(computerScore == 5){
-        winnerMessage.textContent = "Computer Wins!";
-        resultMessage.style.display = 'none';
+    if(playerScore == 5 || computerScore == 5){
+        winnerMessage.textContent = `${playerScore == 5? "Player" : "Computer"} wins the game!`;
+        resetGameBtn.style.display = 'block';
+        optionContainer.style.display = 'none';
     }
 }
 
-rockBtn.addEventListener('click',() => showResults("Rock"));
+rockBtn.addEventListener('click', () => showResults("Rock"));
 paperBtn.addEventListener('click',() => showResults("Paper"));
 scissorBtn.addEventListener('click',() => showResults("Scissor"));
 
 function resetGame(){
     playerScore = 0;
     computerScore = 0;
+    playerScoreSpan.textContent = playerScore;
+    computerScoreSpan.textContent = computerScore;
+    winnerMessage.textContent = "";
+    resultMessage.style.display = 'block';
     resultMessage.textContent = "";
+    resetGameBtn.style.display = 'none';
+    optionContainer.style.display = 'block';
 }
 
-
-
+resetGameBtn.addEventListener('click',resetGame);
 
